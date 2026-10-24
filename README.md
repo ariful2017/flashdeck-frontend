@@ -32,3 +32,10 @@ To be completed during frontend development.
 ## Backend
 
 Backend repository: Add your backend GitHub URL here.
+
+# SCREENSHOTS
+
+![1792817991932](image/README/1792817991932.png)
+
+
+	![1792818004354](image/README/1792818004354.png)

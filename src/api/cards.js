@@ -1,3 +1,4 @@
+
 import client from "./client";
 
 export async function getCards(params = {}) {
@@ -20,13 +21,11 @@ export async function updateCard(cardId, cardData) {
     `/cards/${cardId}/`,
     cardData,
   );
-
   return response.data;
 }
 
 export async function deleteCard(cardId) {
-  const response = await client.delete(`/cards/${cardId}/`);
-  return response.data;
+  return client.delete(`/cards/${cardId}/`);
 }
 
 export async function reviewCard(cardId, correct) {
@@ -34,7 +33,6 @@ export async function reviewCard(cardId, correct) {
     `/cards/${cardId}/review/`,
     { correct },
   );
-
   return response.data;
 }
 
@@ -42,7 +40,6 @@ export async function getStudyCards(deckId) {
   const response = await client.get("/study/", {
     params: deckId ? { deck: deckId } : {},
   });
-
   return response.data;
 }
 

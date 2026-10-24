@@ -11,6 +11,9 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import Decks from "./pages/Decks";
+import DeckDetail from "./pages/DeckDetail";
+import Study from "./pages/Study";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -18,18 +21,23 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          {/* Public routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Protected routes */}
           <Route element={<ProtectedRoute />}>
             <Route
               path="/dashboard"
               element={<Dashboard />}
             />
 
-            {/* Add /decks and study routes in Part 4. */}
+            <Route path="/decks" element={<Decks />} />
+
+            <Route
+              path="/decks/:deckId"
+              element={<DeckDetail />}
+            />
+
+            <Route path="/study" element={<Study />} />
           </Route>
 
           <Route

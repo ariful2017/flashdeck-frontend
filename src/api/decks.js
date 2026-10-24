@@ -20,11 +20,9 @@ export async function updateDeck(deckId, deckData) {
     `/decks/${deckId}/`,
     deckData,
   );
-
   return response.data;
 }
 
 export async function deleteDeck(deckId) {
-  const response = await client.delete(`/decks/${deckId}/`);
-  return response.data;
+  return client.delete(`/decks/${deckId}/`);
 }
